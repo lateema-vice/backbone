@@ -7,6 +7,13 @@
 		<script src="js/underscore.js"></script>
 		<script src="js/jquery-2.1.4.min.js"> </script>
 		<script src="js/backbone.js"></script>
-		<script src="template.js"></script>
+		<script src="js/template.js"></script>
+		<script type="text/javascript">
+			var person = new Person;
+			person.toJSON();
+			var personView = new PersonView({model: person});
+			personView.el;
+			$(document.body).html(personView.el);
+		</script>
 	</body>
 </html>
