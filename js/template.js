@@ -6,6 +6,10 @@ var Person = Backbone.Model.extend({
 	}
 });
 
+var PeopleCollection = Backbone.Collection.extend({
+	model: Person
+});
+
 var PersonView = Backbone.View.extend({
 	tagName : 'li',
 
@@ -20,3 +24,24 @@ var PersonView = Backbone.View.extend({
 	}
 
 });
+
+
+//Another way to add people to a collection
+var peopleCollection = new PeopleCollection(
+	[
+		{
+			name: 'Mohit Jain',
+			age: 26
+		},
+		{
+			name: 'Taroom Tyaqi',
+			age: 25,
+			occupation: 'web designer'
+		},
+		{
+			name: 'Rahul Narang',
+			age: 26,
+			occupation: 'Java Developer'
+		}
+	]
+	);
