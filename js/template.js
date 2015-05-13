@@ -9,30 +9,14 @@ var Person = Backbone.Model.extend({
 var PersonView = Backbone.View.extend({
 	tagName : 'li',
 
-	my_template: _.template("<strong><%= name %></strong>(<%= age %>) - <%= occupation %>"),
+	template: _.template( $('#personTemplate').html()),
 
 	initialize: function(){
 		this.render();
 	},
 
-	// render: function(){
-	// 	this.$el.html(
-	// 		this.model.get('name')+
-	// 		'( ' +
-	// 		this.model.get('age') +
-	// 		' ) - ' +
-	// 		this.model.get('occupation')
-	// 	);
-	// }
-
 	render: function(){
-		this.$el.html(this.my_template(this.model.toJSON()));
+		this.$el.html(this.template(this.model.toJSON()));
 	}
 
 });
-
-// var person = new Person;
-// person.toJSON();
-// var personView = new PersonView({model: person});
-// personView.el;
-// $(document.body).html(personView.el);
