@@ -10,13 +10,7 @@
 		<script id="personTemplate" type="text/template">
 				<strong><%= name %></strong> (<%= age %>) - <%= occupation %>
 			</script>
-		<script src="js/template.js"></script>
-		<script type="text/javascript">
-			var person = new Person;
-			person.toJSON();
-			var personView = new PersonView({model: person});
-			personView.el;
-			$(document.body).html(personView.el);
-		</script> 
+		<script src="js/collection.js"></script>
+		
 	</body>
 </html>
