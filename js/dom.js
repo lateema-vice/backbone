@@ -1,25 +1,20 @@
 $(function () {
 
+var template = _.template("<p>Hello World</p>");
+
 var SharkTankView = Backbone.View.extend({
+
   initialize: function () {
-    //this.render();
-    this.$('button').click(this.dunk);
+    this.render();
   },
 
-  // events: {
-  // 	"click button" : "dunk"
-  // },
+  render: function(){
+  	this.$el.html(template);
+  }
 
-  dunk: function(){
-  	alert('Oh dear,, my legs have been bitten off.')
-  },
-
-  // render: function () {
-  //   this.$el.append('sharks!');
-  // }
 });
 
-  var sharkTankView = new SharkTankView({
-    el: $('#tank')
+  new SharkTankView({
+  	el: $('#tank'),
   });
 });
